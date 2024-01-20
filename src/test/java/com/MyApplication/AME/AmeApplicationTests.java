@@ -1,10 +1,10 @@
-package com.dbmsproject.dbmsproject;
+package com.MyApplication.AME;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DbmsprojectApplicationTests {
+class AmeApplicationTests {
 
 	@Test
 	void contextLoads() {

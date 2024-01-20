@@ -1,13 +1,13 @@
-package com.dbmsproject.dbmsproject;
+package com.MyApplication.AME;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DbmsprojectApplication {
+public class AmeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DbmsprojectApplication.class, args);
+		SpringApplication.run(AmeApplication.class, args);
 	}
 
 }
