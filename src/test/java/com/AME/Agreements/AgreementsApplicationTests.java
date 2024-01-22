@@ -1,10 +1,10 @@
-package com.MyApplication.AME;
+package com.AME.Agreements;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AmeApplicationTests {
+class AgreementsApplicationTests {
 
 	@Test
 	void contextLoads() {
