@@ -15,8 +15,8 @@ public class BusinessLineController {
     BusinessLineService businessLineService;
     List<BusinessLine> businessLines = new ArrayList<>();
 
-    @GetMapping("/businessline/{id}")
-    public Optional<BusinessLine> getBusinessLinesData(@PathVariable Integer id){
-        return businessLineService.getBusinessLinesData(id);
+    @GetMapping("/businessline/{name}")
+    public List<BusinessLine> getBusinessLinesData(@PathVariable String name){
+        return businessLineService.getBusinessLinesData(name);
     }
 }

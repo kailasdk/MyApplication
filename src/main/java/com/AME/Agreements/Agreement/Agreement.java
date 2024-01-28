@@ -33,6 +33,26 @@ public class Agreement implements Serializable {
 
     public Agreement() {
     }
+public Agreement(int opportunityId,String country,Date bidDuDate){
+    this.c4cId=opportunityId;
+    this.country=country;
+    this.bidDueDate=bidDuDate;
+}
+    public Agreement(int projectId, int agreementNumber, String projectName, String geoUnit, Date bidDueDate, int c4cId, String country, boolean isDelfi, boolean isDigital, boolean isFP226, boolean isMultiBusinessline, String stage, BigDecimal TotalOpportunityValue) {
+        this.projectId = projectId;
+        this.agreementNumber = agreementNumber;
+        this.projectName = projectName;
+        this.geoUnit = geoUnit;
+        this.bidDueDate = bidDueDate;
+        this.c4cId = c4cId;
+        this.country = country;
+        this.isDelfi = isDelfi;
+        this.isDigital = isDigital;
+        this.isFP226 = isFP226;
+        this.isMultiBusinessline = isMultiBusinessline;
+        this.stage = stage;
+        this.TotalOpportunityValue = TotalOpportunityValue;
+    }
     public int getAgreementNumber() {
         return agreementNumber;
     }

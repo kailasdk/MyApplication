@@ -11,11 +11,11 @@ public class BusinessLineService {
 
     @Autowired
     BusinessLineRepository businessLineRepository;
-    public Optional<BusinessLine> getBusinessLinesData(Integer id) {
+    public List<BusinessLine> getBusinessLinesData(String name) {
 
 
         
-        return businessLineRepository.findById(id);
+        return businessLineRepository.getByBusinesslineName(name);
         // throw new UnsupportedOperationException("Unimplemented method 'getBusinessLinesData'");
     }
 

@@ -18,6 +18,8 @@ public class AgreementService {
         agreementRepository.findAll().forEach(agreements::add);
         return agreements;
     }
-
+    public void saveAgreement(Agreement agreement){
+        agreementRepository.save(agreement);
+    }
     
 } 
