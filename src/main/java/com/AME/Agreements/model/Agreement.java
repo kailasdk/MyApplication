@@ -1,4 +1,4 @@
-package com.AME.Agreements.Agreement;
+package com.AME.Agreements.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
@@ -32,10 +33,14 @@ public class Agreement implements Serializable {
     boolean isMultiBusinessline;
     String stage;
     BigDecimal TotalOpportunityValue;
-    public Agreement(int opportunityId, String country, Date bidDuDate) {
+
+    BusinessLine businessLines;
+    
+    public Agreement(int opportunityId, String country, Date bidDuDate,BusinessLine businessLine) {
         
         this.c4cId = opportunityId;
         this.country = country;
         this.bidDueDate = bidDuDate;
+        this.businessLines=businessLine;
     }
 }

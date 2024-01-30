@@ -1,4 +1,4 @@
-package com.AME.Agreements.businessline;
+package com.AME.Agreements.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

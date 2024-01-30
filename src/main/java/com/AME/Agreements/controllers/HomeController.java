@@ -1,4 +1,4 @@
-package com.AME.Agreements.home;
+package com.AME.Agreements.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AME.Agreements.opportunities.Opportunity;
+import com.AME.Agreements.model.Opportunity;
+import com.AME.Agreements.service.HomeService;
 import com.google.gson.Gson;
 
 @RestController

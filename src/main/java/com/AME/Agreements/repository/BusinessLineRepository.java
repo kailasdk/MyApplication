@@ -1,6 +1,9 @@
-package com.AME.Agreements.businessline;
+package com.AME.Agreements.repository;
 
 import org.springframework.data.repository.CrudRepository;
+
+import com.AME.Agreements.model.BusinessLine;
+
 import java.util.List;
 
 

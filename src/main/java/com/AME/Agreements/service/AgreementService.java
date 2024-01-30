@@ -1,10 +1,13 @@
-package com.AME.Agreements.Agreement;
+package com.AME.Agreements.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.AME.Agreements.model.Agreement;
+import com.AME.Agreements.repository.AgreementRepository;
 
 @Service
 public class AgreementService {
