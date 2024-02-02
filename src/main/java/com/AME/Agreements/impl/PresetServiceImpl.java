@@ -1,6 +1,9 @@
 package com.AME.Agreements.impl;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,14 +18,18 @@ import org.springframework.web.client.RestTemplate;
 import com.AME.Agreements.dto.PayLoad;
 import com.AME.Agreements.dto.TokenRequestDto;
 import com.AME.Agreements.service.PresetService;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 @Service
 public class PresetServiceImpl implements PresetService {
 
     @Autowired
     ObjectMapper objectMapper;
+    @Value("${name}")
+    String name;
 
     @Override
     public String getTeams() {
@@ -36,8 +43,6 @@ public class PresetServiceImpl implements PresetService {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(token);
-        // headers.add("name", name);
-        // headers.add("secret", secret);
 
         MultiValueMap<String, Object> map = new LinkedMultiValueMap<>();
         map.add("token", token);
@@ -69,23 +74,15 @@ public class PresetServiceImpl implements PresetService {
         HttpEntity<String> requesEntity = new HttpEntity<>(new Gson().toJson(tokenRequestDto), headers);
 
         ResponseEntity<String> respose = restTemplate.exchange(uri, HttpMethod.POST, requesEntity, String.class);
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            PayLoad paylod2 = objectMapper.readValue(respose.getBody(), PayLoad.class);
 
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
         PayLoad paylod = new Gson().fromJson(respose.getBody(), PayLoad.class);
 
-        //
         System.out.println(paylod.getPayload().getAccess_token());
-        // return paylod.getAccessToken();
-        // } catch (Exception e) {
-        // System.out.println(e);
-        // }
-        return "No Token Present";
+        System.out.println("Name=>"+name    );
+
+        //
+        return paylod.getPayload().getAccess_token();
+
     }
 
 }
-

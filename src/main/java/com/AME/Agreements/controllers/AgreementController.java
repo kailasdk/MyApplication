@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
+
 public class AgreementController {
 
     @Autowired
@@ -52,11 +53,4 @@ public class AgreementController {
 
         agreementService.saveAgreement(agreement);
     }
-
-    private long businesslineId;
-    private String businesslineName;
-    private BigDecimal businessValue;
-    private boolean isActive;
-    private boolean isDigital;
-    private boolean CLMWorkFlow;
 }

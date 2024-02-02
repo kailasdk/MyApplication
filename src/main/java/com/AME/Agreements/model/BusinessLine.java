@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
@@ -20,5 +22,10 @@ public class BusinessLine implements Serializable {
     private BigDecimal businessValue;
     private boolean isActive;
     private boolean isDigital;
+    
+    @ManyToOne
+    @JoinColumn(name = "projectId")
+    private Agreement agreement;
+
 
 }
